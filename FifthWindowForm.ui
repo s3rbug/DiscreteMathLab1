@@ -55,13 +55,13 @@ font-size: 30px;</string>
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QLabel" name="label_8">
+         <widget class="QLabel" name="set_fifth">
           <property name="styleSheet">
            <string notr="true">font-family: Gill Sans, sans-serif;
 font-size: 40px;</string>
           </property>
           <property name="text">
-           <string>{1, 2, 3, 4}</string>
+           <string>{}</string>
           </property>
          </widget>
         </item>
@@ -100,46 +100,46 @@ font-size: 30px;</string>
          </widget>
         </item>
         <item row="4" column="1">
-         <widget class="QLabel" name="label_12">
+         <widget class="QLabel" name="is_match">
           <property name="styleSheet">
            <string notr="true">font-family: Gill Sans, sans-serif;
 font-size: 30px;</string>
           </property>
           <property name="text">
-           <string>так</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="set_third">
           <property name="styleSheet">
            <string notr="true">font-family: Gill Sans, sans-serif;
 font-size: 40px;</string>
           </property>
           <property name="text">
-           <string>{1, 2, 3, 4}</string>
+           <string>{}</string>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="set_second">
           <property name="styleSheet">
            <string notr="true">font-family: Gill Sans, sans-serif;
 font-size: 40px;</string>
           </property>
           <property name="text">
-           <string>{1, 2, 3, 4}</string>
+           <string>{}</string>
           </property>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLabel" name="label_6">
+         <widget class="QLabel" name="set_fourth">
           <property name="styleSheet">
            <string notr="true">font-family: Gill Sans, sans-serif;
 font-size: 40px;</string>
           </property>
           <property name="text">
-           <string>{1, 2, 3, 4}</string>
+           <string>{}</string>
           </property>
          </widget>
         </item>
@@ -180,7 +180,7 @@ font-size: 30px;</string>
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="load_from_file">
         <property name="text">
          <string>Зчитати інформацію з файлу</string>
         </property>

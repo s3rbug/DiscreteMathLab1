@@ -1,14 +1,7 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QMessageBox
 from SetLogic import SetLogic
-
-
-def show_error(text: str):
-    msg = QMessageBox()
-    msg.setIcon(QMessageBox.Warning)
-    msg.setText(text)
-    msg.setWindowTitle("Увага!")
-    msg.exec_()
+from utils import show_message, create_folder
 
 
 class SecondWindow(QMainWindow):
@@ -25,11 +18,15 @@ class SecondWindow(QMainWindow):
         self.change_step(True, True)()
         self.next_step.clicked.connect(self.change_step(True, False))
         self.last_step.clicked.connect(self.change_step(False, False))
+        self.save_to_file.clicked.connect(self.save_file)
         self.update_value()
 
-    def save_file(self):
-        f = open("data_second.txt", "w")
+    def save_file(self, message_shown=True):
+        create_folder()
+        f = open("logs/data_second.txt", "w")
         f.write(str(self.result_value))
+        if message_shown:
+            show_message("Інформацію збережено до файлу logs/data_second.txt", QMessageBox.Information)
         f.close()
 
     def change_step(self, is_next: bool, is_update: bool):
@@ -37,25 +34,26 @@ class SecondWindow(QMainWindow):
             if not is_update:
                 if is_next:
                     if self.current_step + 1 >= len(self.long_steps):
-                        show_error("Останній крок уже показується")
+                        show_message("Останній крок уже показується")
                         return
                     self.current_step += 1
                 else:
                     if self.current_step == 0:
-                        show_error("Ви знаходитесь на першому кроці")
+                        show_message("Ви знаходитесь на першому кроці")
                         return
                     self.current_step -= 1
             self.expression.setText(self.long_steps[self.current_step])
             self.set_d.setText(str(self.result_value))
+            self.current_value = self.calculate_step()
             if len(self.result_value) == 0:
                 self.set_d.setText("{}")
             else:
                 self.set_d.setText(str(self.result_value))
-            self.current_value = self.calculate_step()
             if len(self.current_value) == 0:
                 self.result.setText("{}")
             else:
                 self.result.setText(str(self.current_value))
+
         return foo
 
     def calculate_step(self):
@@ -81,4 +79,4 @@ class SecondWindow(QMainWindow):
                 self.fields[i].setText("{}")
             else:
                 self.fields[i].setText(str(self.logic.fields[i]))
-
+        self.change_step(True, True)()

@@ -131,6 +131,9 @@ border-radius: 50%;
         </item>
         <item row="2" column="1">
          <widget class="QToolButton" name="toolButton_2">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Приклад правильного вводу множин:&lt;/p&gt;&lt;p&gt;{1,2,3}&lt;/p&gt;&lt;p&gt;1,2,3&lt;/p&gt;&lt;p&gt;1 2 3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="styleSheet">
            <string notr="true">QToolButton{
 border-radius: 50%;
@@ -143,6 +146,9 @@ border-radius: 50%;
         </item>
         <item row="1" column="1">
          <widget class="QToolButton" name="toolButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Приклад правильного вводу множин:&lt;/p&gt;&lt;p&gt;{1,2,3}&lt;/p&gt;&lt;p&gt;1,2,3&lt;/p&gt;&lt;p&gt;1 2 3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="styleSheet">
            <string notr="true">QToolButton{
 border-radius: 50%;
@@ -204,6 +210,9 @@ border-radius: 50%;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
          </widget>
         </item>
         <item>
@@ -229,6 +238,9 @@ border-radius: 50%;
             <horstretch>1</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>30</number>
           </property>
           <property name="value">
            <number>10</number>
@@ -322,7 +334,9 @@ border-radius: 50%;
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QPushButton {
+	font-size: 35px;
+}</string>
           </property>
           <property name="text">
            <string>Вікно 3</string>
@@ -338,7 +352,9 @@ border-radius: 50%;
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QPushButton {
+	font-size: 35px;
+}</string>
           </property>
           <property name="text">
            <string>Вікно 2</string>
@@ -353,6 +369,11 @@ border-radius: 50%;
             <verstretch>1</verstretch>
            </sizepolicy>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	font-size: 35px;
+}</string>
+          </property>
           <property name="text">
            <string>Вікно 5</string>
           </property>
@@ -365,6 +386,11 @@ border-radius: 50%;
             <horstretch>0</horstretch>
             <verstretch>1</verstretch>
            </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	font-size: 35px;
+}</string>
           </property>
           <property name="text">
            <string>Вікно 4</string>
@@ -392,12 +418,24 @@ border-radius: 50%;
     </property>
     <addaction name="information"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="save_all_files"/>
+   </widget>
+   <addaction name="menu_2"/>
    <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="information">
    <property name="text">
     <string>Про студента</string>
+   </property>
+  </action>
+  <action name="save_all_files">
+   <property name="text">
+    <string>Зберегти усі обчислення до файлу</string>
    </property>
   </action>
  </widget>
